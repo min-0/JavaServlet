@@ -2,6 +2,7 @@ package hello.servlet.web.servlet;
 
 import hello.servlet.domain.member.Member;
 import hello.servlet.domain.member.MemberRepository;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +14,7 @@ import java.io.PrintWriter;
 @WebServlet(name = "memberSaveServlet", urlPatterns = "/servlet/members/save")
 public class MemberSaveServlet extends HttpServlet {
     private MemberRepository memberRepository = MemberRepository.getInstance();
+
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("MemberSaveServlet.service");
@@ -34,9 +36,9 @@ public class MemberSaveServlet extends HttpServlet {
                 "<body>\n" +
                 "성공\n" +
                 "<ul>\n" +
-                " <li>id="+member.getId()+"</li>\n" +
-                " <li>username="+member.getUsername()+"</li>\n" +
-                " <li>age="+member.getAge()+"</li>\n" +
+                " <li>id=" + member.getId() + "</li>\n" +
+                " <li>username=" + member.getUsername() + "</li>\n" +
+                " <li>age=" + member.getAge() + "</li>\n" +
                 "</ul>\n" +
                 "<a href=\"/index.html\">메인</a>\n" +
                 "</body>\n" +

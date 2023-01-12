@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "helloServelt", urlPatterns = "/hello")
-public class HelloServlet  extends HttpServlet {
+public class HelloServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException { //Ctrl + O
         System.out.println("HelloServlet.service"); //soutn

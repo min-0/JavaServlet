@@ -7,15 +7,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Enumeration;
+
 /*
 localhost:8080/request-param?username=hello&age=20
  */
 @WebServlet(name = "requestParamServlet", urlPatterns = "/request-param")
-public class RequestParamServlet  extends HttpServlet {
+public class RequestParamServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("[전체 파라미터 조회] - start");
-        req.getParameterNames().asIterator().forEachRemaining(paramName -> System.out.println(paramName + " = " + req.getParameter( paramName)));
+        req.getParameterNames().asIterator().forEachRemaining(paramName -> System.out.println(paramName + " = " + req.getParameter(paramName)));
         System.out.println("[전체 파라미터 조회] - end");
         System.out.println();
 
@@ -29,7 +30,7 @@ public class RequestParamServlet  extends HttpServlet {
 
         System.out.println("[이름이 같은 복수 파라미터 조회]");
         String[] usernames = req.getParameterValues("username");
-        for(String name : usernames) {
+        for (String name : usernames) {
             System.out.println("name = " + name);
         }
         resp.getWriter().write("ok");

@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet(name = "responseHeaderServlet", urlPatterns = "/response-header")
-public class ResponseHeaderServlet  extends HttpServlet {
+public class ResponseHeaderServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //[status-Line]
@@ -30,6 +30,7 @@ public class ResponseHeaderServlet  extends HttpServlet {
         PrintWriter writer = resp.getWriter();
         writer.println("ok");
     }
+
     private void content(HttpServletResponse response) {
         //Content-Type: text/plain;charset=utf-8
         //Content-Length: 2

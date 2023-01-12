@@ -28,10 +28,10 @@ public class FrontControllerServletV2 extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-         String requestURI= req.getRequestURI();
+        String requestURI = req.getRequestURI();
 
         ControllerV2 controller = controllerMap.get(requestURI);
-        if(controller == null) {
+        if (controller == null) {
             resp.setStatus((HttpServletResponse.SC_NOT_FOUND));
             return;
         }
